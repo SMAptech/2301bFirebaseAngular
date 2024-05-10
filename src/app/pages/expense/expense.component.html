@@ -1,0 +1,18 @@
+<p>expense works!</p>
+<div class="mb-4 d-flex">
+    <button type="button" routerLink ="/expense-form" class="btn btn-primary">Add expense</button>
+    <h5>Total expense</h5>
+</div>
+@for(expense of expenses; track $index){
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ expense.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ expense.price }}</h6>
+            <p class="card-text">{{ expense.description }}</p>
+            <button class="btn btn-sm btn-success" (click)="editExpense(expense.key!)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="editExpense(expense.key!)">Delete</button>
+
+        </div>
+    </div>
+}
